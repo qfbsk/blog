@@ -106,7 +106,7 @@ body{
     left:81%;
     overflow:auto;
 }
-#card1,#card2,#card3{
+#card1,#card2,#card3，#card4,#card5,#card6,#card7,#card8,#card9{
     border-radius: 1%; 
     weight:96%;
     margin:0 auto;  
@@ -114,7 +114,7 @@ body{
     padding: 1vw;
     color:rgba(0,0,0,.62);
 }
-#title1,#title2,#title3{
+#title1,#title2,#title3,#title4,#title5,#title6,#title7,#title8,#title9{
     font-family:zitao; 
     letter-spacing:1vw;
     line-height:120%;
@@ -122,7 +122,7 @@ body{
     text-indent:1vw;
     float:left;    
 }
-#writedate1,#writedate2,#writedate3{
+#writedate1,#writedate2,#writedate3,#writedate4,#writedate5,#writedate6,#writedate7,#writedate8,#writedate9{
     font-family:zitao; 
     letter-spacing:1vw;
     line-height:120%;
@@ -130,14 +130,14 @@ body{
     text-indent:1vw;
     float:right;    
 }
-#picture1,#picture2,#picture3{
+#picture1,#picture2,#picture3,#picture4,#picture5,#picture6,#picture7,#picture8,#picture9{
     width:100%;
     height:100%;
     -webkit-filter: opacity(70%); /* Chrome, Safari, Opera */
     filter: opacity(70%);
     border-radius: 2%;
 }
-#thinking1,#thinking2,#thinking3{
+#thinking1,#thinking2,#thinking3,#thinking4,#thinking5,#thinking6,#thinking7,#thinking8,#thinking9{
     font-family:zitao;
     letter-spacing:0.1vw;
     line-height:120%;
@@ -151,7 +151,7 @@ body{
     text-indent:1vw;
     color:rgba(0,0,0,.62);  
 }
-#m1,#m2,#m3,#m4{
+#m1,#m2,#m3,#m4,#m5,#m6,#m7,#m8,#m9,#m10,#m11,#m12{
     font-size:2vw;
     font-family:zitao;
     text-decoration:none;
