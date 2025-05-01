@@ -24,7 +24,7 @@ function dark() {           /* 夜间模式 */
       if (element) { // 确保元素存在，避免潜在错误
         element.style.color = "rgba(255,255,255,.62)";
       }
-    }
+    };
     var changelogo=document.getElementById("logo");
     
     for (let i = 1; i <= 10; i++) {
@@ -32,27 +32,27 @@ function dark() {           /* 夜间模式 */
       if (element) { // 确保元素存在，避免潜在错误
         element.style.color = "rgba(255,255,255,.62)";
       }
-    }
+    };
     var changedirectory=document.getElementById("directory");
     changedirectory.style.color="rgba(255,255,255,.62)";
-    var changetitle=document.getElementById("title1");
-    changetitle.style.color="rgba(255,255,255,.62)";
-    var changethinking=document.getElementById("thinking1");
-    changethinking.style.color="rgba(255,255,255,.62)";
-    var changewritedate=document.getElementById("writedate1");
-    changewritedate.style.color="rgba(255,255,255,.62)";
-    var changetitle=document.getElementById("title2");
-    changetitle.style.color="rgba(255,255,255,.62)";
-    var changethinking=document.getElementById("thinking2");
-    changethinking.style.color="rgba(255,255,255,.62)";
-    var changewritedate=document.getElementById("writedate2");
-    changewritedate.style.color="rgba(255,255,255,.62)";
-    var changetitle=document.getElementById("title3");
-    changetitle.style.color="rgba(255,255,255,.62)";
-    var changethinking=document.getElementById("thinking3");
-    changethinking.style.color="rgba(255,255,255,.62)";
-    var changewritedate=document.getElementById("writedate3");
-    changewritedate.style.color="rgba(255,255,255,.62)";
+    for (let i = 1; i <= 10; i++) {
+      const element = document.getElementById(`title${i}`);
+      if (element) { // 确保元素存在，避免潜在错误
+        element.style.color = "rgba(255,255,255,.62)";
+      }
+    };
+    for (let i = 1; i <= 10; i++) {
+      const element = document.getElementById(`thinking${i}`);
+      if (element) { // 确保元素存在，避免潜在错误
+        element.style.color = "rgba(255,255,255,.62)";
+      }
+    };
+    for (let i = 1; i <= 10; i++) {
+      const element = document.getElementById(`writedate${i}`);
+      if (element) { // 确保元素存在，避免潜在错误
+        element.style.color = "rgba(255,255,255,.62)";
+      }
+    };
     var changebk=document.getElementById("background");
     changelogo.src="images/logohalfwhite.png";
     changebk.style.backgroundImage= "url('images/bk2.jpg')";
