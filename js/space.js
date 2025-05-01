@@ -59,43 +59,39 @@ function dark() {           /* 夜间模式 */
     m=2;
 }    
 function light() {          /* 白天模式 */
-    var changelogo=document.getElementById("logo");            
-    var changenav=document.getElementById("nav4");
-    changenav.style.color="rgba(0,0,0,.62)";
-    var changenav=document.getElementById("nav3");
-    changenav.style.color="rgba(0,0,0,.62)";
-    var changenav=document.getElementById("nav2");
-    changenav.style.color="rgba(0,0,0,.62)";
-    var changenav=document.getElementById("nav1");
-    changenav.style.color="rgba(0,0,0,.62)";
-    var changem=document.getElementById("m4");
-    changem.style.color="rgba(0,0,0,.62)";
-    var changem=document.getElementById("m3");
-    changem.style.color="rgba(0,0,0,.62)";
-    var changem=document.getElementById("m2");
-    changem.style.color="rgba(0,0,0,.62)";
-    var changem=document.getElementById("m1");
-    changem.style.color="rgba(0,0,0,.62)";
+      const element = document.getElementById(`nav${i}`);
+      if (element) { // 确保元素存在，避免潜在错误
+        element.style.color = "rgba(0,0,0,.62)";
+      }
+    };
+    var changelogo=document.getElementById("logo");
+    
+    for (let i = 1; i <= 10; i++) {
+      const element = document.getElementById(`m${i}`);
+      if (element) { // 确保元素存在，避免潜在错误
+        element.style.color = "rgba(0,0,0,.62)";
+      }
+    };
     var changedirectory=document.getElementById("directory");
-    changedirectory.style.color="rgba(0,0,0,.62)";
-    var changetitle=document.getElementById("title1");
-    changetitle.style.color="rgba(0,0,0,.62)";
-    var changethinking=document.getElementById("thinking1");
-    changethinking.style.color="rgba(0,0,0,.62)";
-    var changewritedate=document.getElementById("writedate1");
-    changewritedate.style.color="rgba(0,0,0,.62)";
-    var changetitle=document.getElementById("title2");
-    changetitle.style.color="rgba(0,0,0,.62)";
-    var changethinking=document.getElementById("thinking2");
-    changethinking.style.color="rgba(0,0,0,.62)";
-    var changewritedate=document.getElementById("writedate2");
-    changewritedate.style.color="rgba(0,0,0,.62)";
-     var changetitle=document.getElementById("title3");
-    changetitle.style.color="rgba(0,0,0,.62)";
-    var changethinking=document.getElementById("thinking3");
-    changethinking.style.color="rgba(0,0,0,.62)";
-    var changewritedate=document.getElementById("writedate3");
-    changewritedate.style.color="rgba(0,0,0,.62)";
+    changedirectory.style.color="rgba(255,255,255,.62)";
+    for (let i = 1; i <= 10; i++) {
+      const element = document.getElementById(`title${i}`);
+      if (element) { // 确保元素存在，避免潜在错误
+        element.style.color = "rgba(0,0,0,.62)";
+      }
+    };
+    for (let i = 1; i <= 10; i++) {
+      const element = document.getElementById(`thinking${i}`);
+      if (element) { // 确保元素存在，避免潜在错误
+        element.style.color = "rgba(0,0,0,.62)";
+      }
+    };
+    for (let i = 1; i <= 10; i++) {
+      const element = document.getElementById(`writedate${i}`);
+      if (element) { // 确保元素存在，避免潜在错误
+        element.style.color = "rgba(0,0,0,.62)";
+      }
+    };
     var changebk=document.getElementById("background");
     changelogo.src="images/logohalfblack.png";
     changebk.style.backgroundImage= "url('images/bk1.jpg')";
