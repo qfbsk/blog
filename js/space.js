@@ -3,6 +3,10 @@ const MODES = {
     DAY: 'day',
     NIGHT: 'night'
 };
+// 保持旧代码的change()函数兼容性
+function change() {
+    changeTheme();
+}
 
 // DOM元素配置
 const ELEMENT_GROUPS = {
