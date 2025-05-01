@@ -19,23 +19,20 @@ function change(){
     } 
 }       
 function dark() {           /* 夜间模式 */
+    for (let i = 1; i <= 10; i++) {
+      const element = document.getElementById(`nav${i}`);
+      if (element) { // 确保元素存在，避免潜在错误
+        element.style.color = "rgba(255,255,255,.62)";
+      }
+    }
     var changelogo=document.getElementById("logo");
-    var changenav=document.getElementById("nav4");
-    changenav.style.color="rgba(255,255,255,.62)";
-    var changenav=document.getElementById("nav3");
-    changenav.style.color="rgba(255,255,255,.62)";
-    var changenav=document.getElementById("nav2");
-    changenav.style.color="rgba(255,255,255,.62)";
-    var changenav=document.getElementById("nav1");
-    changenav.style.color="rgba(255,255,255,.62)";
-    var changem=document.getElementById("m4");
-    changem.style.color="rgba(255,255,255,.62)";
-    var changem=document.getElementById("m3");
-    changem.style.color="rgba(255,255,255,.62)";
-    var changem=document.getElementById("m2");
-    changem.style.color="rgba(255,255,255,.62)";
-    var changem=document.getElementById("m1");
-    changem.style.color="rgba(255,255,255,.62)";
+    
+    for (let i = 1; i <= 10; i++) {
+      const element = document.getElementById(`m${i}`);
+      if (element) { // 确保元素存在，避免潜在错误
+        element.style.color = "rgba(255,255,255,.62)";
+      }
+    }
     var changedirectory=document.getElementById("directory");
     changedirectory.style.color="rgba(255,255,255,.62)";
     var changetitle=document.getElementById("title1");
