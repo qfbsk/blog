@@ -24,9 +24,7 @@ function dark() {           /* 夜间模式 */
       if (element) { // 确保元素存在，避免潜在错误
         element.style.color = "rgba(255,255,255,.62)";
       }
-    };
-    var changelogo=document.getElementById("logo");
-    
+    };    
     for (let i = 1; i <= 10; i++) {
       const element = document.getElementById(`m${i}`);
       if (element) { // 确保元素存在，避免潜在错误
@@ -59,21 +57,20 @@ function dark() {           /* 夜间模式 */
     m=2;
 }    
 function light() {          /* 白天模式 */
+  for (let i = 1; i <= 10; i++) {
       const element = document.getElementById(`nav${i}`);
       if (element) { // 确保元素存在，避免潜在错误
         element.style.color = "rgba(0,0,0,.62)";
       }
     };
-    var changelogo=document.getElementById("logo");
-    
-    for (let i = 1; i <= 10; i++) {
+      for (let i = 1; i <= 10; i++) {
       const element = document.getElementById(`m${i}`);
       if (element) { // 确保元素存在，避免潜在错误
         element.style.color = "rgba(0,0,0,.62)";
       }
     };
     var changedirectory=document.getElementById("directory");
-    changedirectory.style.color="rgba(255,255,255,.62)";
+    changedirectory.style.color="rgba(0,0,0,.62)";
     for (let i = 1; i <= 10; i++) {
       const element = document.getElementById(`title${i}`);
       if (element) { // 确保元素存在，避免潜在错误
