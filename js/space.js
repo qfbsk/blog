@@ -19,6 +19,7 @@ function change(){
     } 
 }       
 function dark() {           /* 夜间模式 */
+    var changelogo=document.getElementById("logo");
     for (let i = 1; i <= 10; i++) {
       const element = document.getElementById(`nav${i}`);
       if (element) { // 确保元素存在，避免潜在错误
@@ -57,6 +58,7 @@ function dark() {           /* 夜间模式 */
     m=2;
 }    
 function light() {          /* 白天模式 */
+  var changelogo=document.getElementById("logo");
   for (let i = 1; i <= 10; i++) {
       const element = document.getElementById(`nav${i}`);
       if (element) { // 确保元素存在，避免潜在错误
