@@ -1,102 +1,78 @@
-/* 初始化 加载完成收到广播 获取时间更新主题 */
-var m=1;
-var date = new Date();     
-var hour = date.getHours();       /* 获取小时 */
+// 模式状态常量
+const MODES = {
+    DAY: 'day',
+    NIGHT: 'night'
+};
+
+// DOM元素配置
+const ELEMENT_GROUPS = {
+    TEXT_ELEMENTS: [
+        { prefix: 'nav', range: 10 },
+        { prefix: 'm', range: 10 },
+        { prefix: 'title', range: 10 },
+        { prefix: 'thinking', range: 10 },
+        { prefix: 'writedate', range: 10 },
+        { prefix: 'directory', range: 1 }
+    ],
+    ASSETS: {
+        background: { day: 'url(images/bk1.jpg)', night: 'url(images/bk2.jpg)' },
+        logo: { day: 'images/logohalfblack.png', night: 'images/logohalfwhite.png' }
+    }
+};
+
+// 样式配置
+const THEME_COLORS = {
+    [MODES.DAY]: 'rgba(0,0,0,.62)',
+    [MODES.NIGHT]: 'rgba(255,255,255,.62)'
+};
+
+let currentMode = MODES.DAY;
+
+/* 初始化 */
 function initialize() {
-    if(( 24>=hour && hour>=18) || ( 0<=hour && hour <6)){           /* 夜间模式 */
-        dark();
-    }
-    else{                                                           /* 白天模式 */
-        light();
-    } 
-}  
-function change(){
-    if( m==1) {
-        dark();      /* 夜间模式 */
-    }
-    else {
-        light();     /* 白天模式 */
-    } 
-}       
-function dark() {           /* 夜间模式 */
-   for (let i = 1; i <= 10; i++) {
-      const element = document.getElementById(`nav${i}`);
-      if (element) { // 确保元素存在，避免潜在错误
-        element.style.color = "rgba(255,255,255,.62)";
-      }
-    };    
-    for (let i = 1; i <= 10; i++) {
-      const element = document.getElementById(`m${i}`);
-      if (element) { // 确保元素存在，避免潜在错误
-        element.style.color = "rgba(255,255,255,.62)";
-      }
-    };
+    const date = new Date();
+    const hour = date.getHours();
     
-    for (let i = 1; i <= 10; i++) {
-      const element = document.getElementById(`title${i}`);
-      if (element) { // 确保元素存在，避免潜在错误
-        element.style.color = "rgba(255,255,255,.62)";
-      }
-    };
-    for (let i = 1; i <= 10; i++) {
-      const element = document.getElementById(`thinking${i}`);
-      if (element) { // 确保元素存在，避免潜在错误
-        element.style.color = "rgba(255,255,255,.62)";
-      }
-    };
-    for (let i = 1; i <= 10; i++) {
-      const element = document.getElementById(`writedate${i}`);
-      if (element) { // 确保元素存在，避免潜在错误
-        element.style.color = "rgba(255,255,255,.62)";
-      }
-    };
-    var changedirectory=document.getElementById("directory");
-    changedirectory.style.color="rgba(255,255,255,.62)";
-    var changebk=document.getElementById("background");
-    changebk.style.backgroundImage= "url('images/bk2.jpg')";
-    var changelogo=document.getElementById("logo");
-    changelogo.src="images/logohalfwhite.png";
-    
-    m=2;
-}    
-function light() {          /* 白天模式 */
-  for (let i = 1; i <= 10; i++) {
-      const element = document.getElementById(`nav${i}`);
-      if (element) { // 确保元素存在，避免潜在错误
-        element.style.color = "rgba(0,0,0,.62)";
-      }
-    };
-      for (let i = 1; i <= 10; i++) {
-      const element = document.getElementById(`m${i}`);
-      if (element) { // 确保元素存在，避免潜在错误
-        element.style.color = "rgba(0,0,0,.62)";
-      }
-    };
-    
-    for (let i = 1; i <= 10; i++) {
-      const element = document.getElementById(`title${i}`);
-      if (element) { // 确保元素存在，避免潜在错误
-        element.style.color = "rgba(0,0,0,.62)";
-      }
-    };
-    for (let i = 1; i <= 10; i++) {
-      const element = document.getElementById(`thinking${i}`);
-      if (element) { // 确保元素存在，避免潜在错误
-        element.style.color = "rgba(0,0,0,.62)";
-      }
-    };
-    for (let i = 1; i <= 10; i++) {
-      const element = document.getElementById(`writedate${i}`);
-      if (element) { // 确保元素存在，避免潜在错误
-        element.style.color = "rgba(0,0,0,.62)";
-      }
-    };
-        var changedirectory=document.getElementById("directory");
-    changedirectory.style.color="rgba(0,0,0,.62)";
-    var changebk=document.getElementById("background");
-    changebk.style.backgroundImage= "url('images/bk1.jpg')";
-    var changelogo=document.getElementById("logo");
-    changelogo.src="images/logohalfblack.png";
-    
-    m=1;
+    // 简化时间判断逻辑
+    const isNightTime = hour >= 18 || hour < 6;
+    setTheme(isNightTime ? MODES.NIGHT : MODES.DAY);
 }
+
+/* 主题切换入口 */
+function changeTheme() {
+    setTheme(currentMode === MODES.DAY ? MODES.NIGHT : MODES.DAY);
+}
+
+/* 核心主题设置方法 */
+function setTheme(mode) {
+    // 更新文本颜色
+    ELEMENT_GROUPS.TEXT_ELEMENTS.forEach(({ prefix, range }) => {
+        for (let i = 1; i <= range; i++) {
+            const element = document.getElementById(`${prefix}${i}`);
+            safeStyleUpdate(element, 'color', THEME_COLORS[mode]);
+        }
+    });
+
+    // 更新资源
+    const assets = ELEMENT_GROUPS.ASSETS;
+    safeStyleUpdate(document.getElementById('background'), 'backgroundImage', assets.background[mode]);
+    safeAttributeUpdate(document.getElementById('logo'), 'src', assets.logo[mode]);
+
+    currentMode = mode;
+}
+
+/* 安全DOM操作辅助方法 */
+function safeStyleUpdate(element, property, value) {
+    if (element && element.style) {
+        element.style[property] = value;
+    }
+}
+
+function safeAttributeUpdate(element, attribute, value) {
+    if (element) {
+        element.setAttribute(attribute, value);
+    }
+}
+
+// 初始化主题
+initialize();
