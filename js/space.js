@@ -19,8 +19,7 @@ function change(){
     } 
 }       
 function dark() {           /* 夜间模式 */
-    var changelogo=document.getElementById("logo");
-    for (let i = 1; i <= 10; i++) {
+   for (let i = 1; i <= 10; i++) {
       const element = document.getElementById(`nav${i}`);
       if (element) { // 确保元素存在，避免潜在错误
         element.style.color = "rgba(255,255,255,.62)";
@@ -32,8 +31,7 @@ function dark() {           /* 夜间模式 */
         element.style.color = "rgba(255,255,255,.62)";
       }
     };
-    var changedirectory=document.getElementById("directory");
-    changedirectory.style.color="rgba(255,255,255,.62)";
+    
     for (let i = 1; i <= 10; i++) {
       const element = document.getElementById(`title${i}`);
       if (element) { // 确保元素存在，避免潜在错误
@@ -52,13 +50,16 @@ function dark() {           /* 夜间模式 */
         element.style.color = "rgba(255,255,255,.62)";
       }
     };
+    var changedirectory=document.getElementById("directory");
+    changedirectory.style.color="rgba(255,255,255,.62)";
     var changebk=document.getElementById("background");
-    changelogo.src="images/logohalfwhite.png";
     changebk.style.backgroundImage= "url('images/bk2.jpg')";
+    var changelogo=document.getElementById("logo");
+    changelogo.src="images/logohalfwhite.png";
+    
     m=2;
 }    
 function light() {          /* 白天模式 */
-  var changelogo=document.getElementById("logo");
   for (let i = 1; i <= 10; i++) {
       const element = document.getElementById(`nav${i}`);
       if (element) { // 确保元素存在，避免潜在错误
@@ -71,8 +72,7 @@ function light() {          /* 白天模式 */
         element.style.color = "rgba(0,0,0,.62)";
       }
     };
-    var changedirectory=document.getElementById("directory");
-    changedirectory.style.color="rgba(0,0,0,.62)";
+    
     for (let i = 1; i <= 10; i++) {
       const element = document.getElementById(`title${i}`);
       if (element) { // 确保元素存在，避免潜在错误
@@ -91,8 +91,12 @@ function light() {          /* 白天模式 */
         element.style.color = "rgba(0,0,0,.62)";
       }
     };
+        var changedirectory=document.getElementById("directory");
+    changedirectory.style.color="rgba(0,0,0,.62)";
     var changebk=document.getElementById("background");
-    changelogo.src="images/logohalfblack.png";
     changebk.style.backgroundImage= "url('images/bk1.jpg')";
+    var changelogo=document.getElementById("logo");
+    changelogo.src="images/logohalfblack.png";
+    
     m=1;
 }
